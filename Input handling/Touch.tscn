@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cf5ypunj0xr56"]
-
-[ext_resource type="Script" path="res://Input handling/Touch.gd" id="1_aieun"]
-
-[node name="Input" type="Node"]
-script = ExtResource("1_aieun")
-
-[connection signal="swipe" from="." to="." method="_on_swipe"]
