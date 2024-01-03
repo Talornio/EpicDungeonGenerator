@@ -2,7 +2,7 @@
 progetto per la creazione di un gioco roguelike in godot, il dungeon del gioco sarà generato proceduralmente. Inoltre sarà ambiziosamente multiplayer.
 
 
-version: ALFA(α)1.5(uno punto cinque)
+version: ALFA V1.5
 
 -- AGGIUNTE --
 -aggiunta la scena equipables
