@@ -1,0 +1,195 @@
+[gd_scene load_steps=25 format=3 uid="uid://cvnj02mb1dxq7"]
+
+[ext_resource type="Script" path="res://Enemies/Slime/Slime.gd" id="1_mdkyb"]
+[ext_resource type="Texture2D" uid="uid://647p6g7y5ktc" path="res://TileSets/slime.png" id="2_15uce"]
+[ext_resource type="Texture2D" uid="uid://r15tfho0jq0h" path="res://UITiles/underBar.png" id="3_h5hxv"]
+[ext_resource type="Texture2D" uid="uid://ym3hmpmh11su" path="res://UITiles/backBar.png" id="4_artrj"]
+[ext_resource type="Texture2D" uid="uid://c5mh2f38c0ooq" path="res://UITiles/progressBar.png" id="5_a8w3e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsbed"]
+atlas = ExtResource("2_15uce")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7h6h"]
+atlas = ExtResource("2_15uce")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_080g8"]
+atlas = ExtResource("2_15uce")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqb0p"]
+atlas = ExtResource("2_15uce")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rf2w2"]
+atlas = ExtResource("2_15uce")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcp03"]
+atlas = ExtResource("2_15uce")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe7iy"]
+atlas = ExtResource("2_15uce")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvs46"]
+atlas = ExtResource("2_15uce")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xq64y"]
+atlas = ExtResource("2_15uce")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftghb"]
+atlas = ExtResource("2_15uce")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqiot"]
+atlas = ExtResource("2_15uce")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg1d1"]
+atlas = ExtResource("2_15uce")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgi4l"]
+atlas = ExtResource("2_15uce")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6vl0"]
+atlas = ExtResource("2_15uce")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scwys"]
+atlas = ExtResource("2_15uce")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_82kf6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsbed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7h6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_080g8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqb0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rf2w2")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcp03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe7iy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvs46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xq64y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftghb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqiot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg1d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgi4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6vl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scwys")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8y74b"]
+radius = 5.28707
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_07xke"]
+radius = 44.5112
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_byodt"]
+radius = 10.0125
+
+[node name="Slime" type="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(600, 300)
+scale = Vector2(2, 2)
+platform_floor_layers = 4294967294
+script = ExtResource("1_mdkyb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_82kf6")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 1.625)
+scale = Vector2(1, -1)
+shape = SubResource("CircleShape2D_8y74b")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(0, 1.5)
+shape = SubResource("CircleShape2D_07xke")
+
+[node name="SlimeHitBox" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlimeHitBox" groups=["enemy_group"]]
+position = Vector2(0, 1.5)
+shape = SubResource("CircleShape2D_byodt")
+
+[node name="CooldownAttackTimer" type="Timer" parent="."]
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+texture_filter = 4
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 90.0
+scale = Vector2(0.2, 0.2)
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4
+texture_under = ExtResource("3_h5hxv")
+texture_over = ExtResource("4_artrj")
+texture_progress = ExtResource("5_a8w3e")
+tint_under = Color(0.215686, 0.215686, 0.215686, 1)
+tint_over = Color(0.831373, 0.686275, 0.215686, 1)
+tint_progress = Color(0.0431373, 0.584314, 0.0352941, 1)
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="SlimeHitBox" to="." method="_on_slime_hit_box_body_entered"]
+[connection signal="body_exited" from="SlimeHitBox" to="." method="_on_slime_hit_box_body_exited"]
+[connection signal="timeout" from="CooldownAttackTimer" to="." method="_on_cooldown_attack_timer_timeout"]

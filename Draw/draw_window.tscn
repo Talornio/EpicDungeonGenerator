@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwq2ujh8wklaf"]
+
+[ext_resource type="Script" path="res://Draw/draw_window.gd" id="1_ofs17"]
+[ext_resource type="PackedScene" uid="uid://b4pds88f750ig" path="res://Draw/Draw.tscn" id="1_ufni7"]
+
+[node name="Draw_window" type="Window"]
+transparent_bg = true
+title = "Paper"
+position = Vector2i(0, 192)
+size = Vector2i(800, 400)
+always_on_top = true
+transparent = true
+script = ExtResource("1_ofs17")
+
+[node name="Draw" parent="." instance=ExtResource("1_ufni7")]
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://docgis8esovlb"]
+
+[ext_resource type="Script" path="res://Draw/Draw.gd" id="1_v2xsq"]
+[ext_resource type="Curve" uid="uid://c3dpfscxacqqm" path="res://curva2.tres" id="2_b81d3"]
+
+[node name="Draw" type="Node2D"]
+script = ExtResource("1_v2xsq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 24.9
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Line2D" type="Line2D" parent="CanvasLayer"]
+visible = false
+points = PackedVector2Array(296, 248, 1112, 504, 936, 104, 312, 208)
+width_curve = ExtResource("2_b81d3")
+
+[node name="Lines" type="Node2D" parent="CanvasLayer"]
